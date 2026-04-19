@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior-y: contain;
+}
+
+body {
+  @apply font-body text-slate-800 antialiased;
+  background:
+    radial-gradient(circle at 10% 10%, #ffe0c7 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, #e6d7ff 0%, transparent 45%),
+    radial-gradient(circle at 80% 95%, #d1f5e5 0%, transparent 45%),
+    radial-gradient(circle at 15% 95%, #fff3b0 0%, transparent 45%),
+    linear-gradient(135deg, #fff7ee, #f6f0ff 60%, #eefbf3);
+  background-attachment: fixed;
+  min-height: 100dvh;
+}
+
+/* Prevent text selection during card drag */
+.no-select,
+.no-select * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* iOS tap highlight off */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
